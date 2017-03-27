@@ -1,0 +1,62 @@
+From 7f39b4d399845046c5dd0696670e39c8d7d100b1 Mon Sep 17 00:00:00 2001
+From: Michel Jaouen <michel.jaouen@st.com>
+Date: Tue, 21 Mar 2017 15:45:55 +0100
+Subject: [PATCH 1/4] add features/unsupported/USBDevive
+
+---
+ features/unsupported/{ => USBHost}/.mbedignore | 0
+ features/unsupported/doc/.mbedignore           | 1 +
+ features/unsupported/dsp/.mbedignore           | 1 +
+ features/unsupported/net/.mbedignore           | 1 +
+ features/unsupported/rpc/.mbedignore           | 1 +
+ features/unsupported/tests/.mbedignore         | 1 +
+ 6 files changed, 5 insertions(+)
+ rename features/unsupported/{ => USBHost}/.mbedignore (100%)
+ create mode 100644 features/unsupported/doc/.mbedignore
+ create mode 100644 features/unsupported/dsp/.mbedignore
+ create mode 100644 features/unsupported/net/.mbedignore
+ create mode 100644 features/unsupported/rpc/.mbedignore
+ create mode 100644 features/unsupported/tests/.mbedignore
+
+diff --git a/features/unsupported/.mbedignore b/features/unsupported/USBHost/.mbedignore
+similarity index 100%
+rename from features/unsupported/.mbedignore
+rename to features/unsupported/USBHost/.mbedignore
+diff --git a/features/unsupported/doc/.mbedignore b/features/unsupported/doc/.mbedignore
+new file mode 100644
+index 0000000..72e8ffc
+--- /dev/null
++++ b/features/unsupported/doc/.mbedignore
+@@ -0,0 +1 @@
++*
+diff --git a/features/unsupported/dsp/.mbedignore b/features/unsupported/dsp/.mbedignore
+new file mode 100644
+index 0000000..72e8ffc
+--- /dev/null
++++ b/features/unsupported/dsp/.mbedignore
+@@ -0,0 +1 @@
++*
+diff --git a/features/unsupported/net/.mbedignore b/features/unsupported/net/.mbedignore
+new file mode 100644
+index 0000000..72e8ffc
+--- /dev/null
++++ b/features/unsupported/net/.mbedignore
+@@ -0,0 +1 @@
++*
+diff --git a/features/unsupported/rpc/.mbedignore b/features/unsupported/rpc/.mbedignore
+new file mode 100644
+index 0000000..72e8ffc
+--- /dev/null
++++ b/features/unsupported/rpc/.mbedignore
+@@ -0,0 +1 @@
++*
+diff --git a/features/unsupported/tests/.mbedignore b/features/unsupported/tests/.mbedignore
+new file mode 100644
+index 0000000..72e8ffc
+--- /dev/null
++++ b/features/unsupported/tests/.mbedignore
+@@ -0,0 +1 @@
++*
+-- 
+2.10.2.windows.1
+

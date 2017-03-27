@@ -1,0 +1,42 @@
+From d33bcb937cef0bb88c44f1fa425b88d98604c51d Mon Sep 17 00:00:00 2001
+From: Michel Jaouen <michel.jaouen@st.com>
+Date: Thu, 23 Mar 2017 10:41:05 +0100
+Subject: [PATCH 2/4] USBFIFO change
+
+---
+ .../TARGET_NUCLEO_F303ZE/USBHAL_STM32F303ZE.h         | 19 +++++++++----------
+ 1 file changed, 9 insertions(+), 10 deletions(-)
+
+diff --git a/targets/TARGET_STM/TARGET_STM32F3/TARGET_NUCLEO_F303ZE/USBHAL_STM32F303ZE.h b/targets/TARGET_STM/TARGET_STM32F3/TARGET_NUCLEO_F303ZE/USBHAL_STM32F303ZE.h
+index fa49ba2..8a8dd2d 100644
+--- a/targets/TARGET_STM/TARGET_STM32F3/TARGET_NUCLEO_F303ZE/USBHAL_STM32F303ZE.h
++++ b/targets/TARGET_STM/TARGET_STM32F3/TARGET_NUCLEO_F303ZE/USBHAL_STM32F303ZE.h
+@@ -111,16 +111,15 @@ USBHAL::USBHAL(void) {
+     __HAL_RCC_SYSCFG_CLK_ENABLE();
+     hpcd.State = HAL_PCD_STATE_RESET;
+     HAL_PCD_Init(&hpcd);
+-    /* hardcoded size of FIFO according definition*/
+-    HAL_PCDEx_PMAConfig(&hpcd , 0x00 , PCD_SNG_BUF, 0x30);
+-    HAL_PCDEx_PMAConfig(&hpcd , 0x80 , PCD_SNG_BUF, 0x70);
+-#if 1
+-    HAL_PCDEx_PMAConfig(&hpcd , 0x3, PCD_DBL_BUF, 0x018000b0);
+-#else
+-    HAL_PCDEx_PMAConfig(&hpcd , 0x3, PCD_SNG_BUF, 0x180);
+-#endif
+-    HAL_PCDEx_PMAConfig(&hpcd , 0x83, PCD_SNG_BUF, 0xb0);
+-    NVIC_SetVector(USBHAL_IRQn,(uint32_t)&_usbisr);
++	/* hardcoded size of FIFO according definition */
++    HAL_PCDEx_PMAConfig(&hpcd , 0x00, PCD_SNG_BUF, 0x30);
++    HAL_PCDEx_PMAConfig(&hpcd , 0x80, PCD_SNG_BUF, 0x70);
++    HAL_PCDEx_PMAConfig(&hpcd , 0x01, PCD_SNG_BUF, 0x90);
++    HAL_PCDEx_PMAConfig(&hpcd , 0x81, PCD_SNG_BUF, 0xb0);
++    HAL_PCDEx_PMAConfig(&hpcd , 0x02, PCD_SNG_BUF, 0x100);
++    HAL_PCDEx_PMAConfig(&hpcd , 0x82, PCD_SNG_BUF, 0x120);
++
++     NVIC_SetVector(USBHAL_IRQn,(uint32_t)&_usbisr);
+     NVIC_SetPriority(USBHAL_IRQn, 1);
+     HAL_PCD_Start(&hpcd);
+ }
+-- 
+2.10.2.windows.1
+
