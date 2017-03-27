@@ -1,0 +1,2 @@
+# usbmsd
+NUCLEO_F303ZE USBMSD MBED
